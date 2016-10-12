@@ -37,7 +37,7 @@
 				[%thread] %logger [%file:%line] - %msg%n</pattern>
 			<charset>utf-8</charset>
 		</encoder>-->
-		<layout class="com.yinker.pats.batch.logback.CustomerPatternLayout">
+		<layout class="com.javazx.batch.logback.CustomerPatternLayout">
 			<Pattern>%-5p [%d] [%module] [%ip] [%C:%L] - %m %n</Pattern>
 		</layout>
 		<!-- 此日志文件只记录error级别的 -->
@@ -60,7 +60,7 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 		<append>true</append>
-		<layout class="com.yinker.pats.batch.logback.CustomerPatternLayout">
+		<layout class="com.javazx.batch.logback.CustomerPatternLayout">
 			<Pattern>%-5p [%d] [%module] [%ip] [%C:%L] - %m %n</Pattern>
 		</layout>
 		<!-- 此日志文件只记录warn级别，不记录大于warn级别的日志 -->
@@ -83,7 +83,7 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 		<append>true</append>
-		<layout class="com.yinker.pats.batch.logback.CustomerPatternLayout">
+		<layout class="com.javazx.batch.logback.CustomerPatternLayout">
 			<Pattern>%-5p [%d] [%module] [%ip] [%C:%L] - %m %n</Pattern>
 		</layout>
 		<!-- 此日志文件只记录info级别，不记录大于info级别的日志 -->
@@ -107,7 +107,7 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 		<append>true</append>
-		<layout class="com.yinker.pats.batch.logback.CustomerPatternLayout">
+		<layout class="com.javazx.batch.logback.CustomerPatternLayout">
 			<Pattern>%-5p [%d] [%module] [%ip] [%C:%L] - %m %n</Pattern>
 		</layout>
 		
@@ -126,7 +126,7 @@
 				[%thread] %logger [%file:%line] - %msg%n</pattern>
 			<charset>utf-8</charset>
 		</encoder>-->
-		<layout class="com.yinker.pats.batch.logback.CustomerPatternLayout">
+		<layout class="com.javazx.batch.logback.CustomerPatternLayout">
 			<Pattern>%-5p [%d] [%module] [%ip] [%C:%L] - %m %n</Pattern>
 		</layout>
 		<!-- 此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息 -->
