@@ -15,6 +15,10 @@
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
         <!-- mysql驱动包 -->
         <mysql.version>5.1.36</mysql.version>
+        <!-- spring版本号 -->
+        <spring.version>4.1.7.RELEASE</spring.version>
+        <!-- springBatch包 -->
+        <spring.batch>3.0.3.RELEASE</spring.batch>
 
         <!-- for maven compiler plugin -->
         <maven_deploy_skip>false</maven_deploy_skip>
@@ -30,6 +34,19 @@
         <maven_source_plugin_version>2.4</maven_source_plugin_version>
     </properties>
     <dependencies>
+        <!-- spring 核心包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
         <!-- mybatis 核心包 -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -42,6 +59,19 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>${mybatis.spring.version}</version>
+        </dependency>
+
+        <!-- Spring Batch -->
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-core</artifactId>
+            <version>${spring.batch}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-infrastructure</artifactId>
+            <version>${spring.batch}</version>
         </dependency>
 
         <!-- junit单元测试包 -->
