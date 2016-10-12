@@ -21,6 +21,6 @@
     <select id="selectAllInfo" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from user_from
+        from user_from  limit #{_skiprows,jdbcType=INTEGER},#{_pagesize,jdbcType=INTEGER}
     </select>
 </mapper>

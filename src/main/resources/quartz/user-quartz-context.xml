@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        					http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+	default-autowire="byName" default-init-method="init">
+
+	<bean id="userBatchJob" class="com.javazx.batch.job.UserBatchJob">
+		<property name="jobName" value="userBatchJobName" />
+		<property name="jobLocator" ref="jobRegistry" />
+		<property name="jobLauncher" ref="jobLauncher" />
+	</bean>
+
+	<bean name="userJobDetail"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.javazx.batch.quartz.scheduler.UserSchedulerJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="batchJob" value="userBatchJob" />
+			</map>
+		</property>
+		<!-- durability 表示在没有 trigger 关联的时候任务是否被保留 默认false -->
+		<property name="durability" value="true" />
+	</bean>
+
+	<!-- Run the job every 1 minute 0 0/1 * * * ? 0 0 1 * * ? -->
+	<bean id="userCronTrigger"
+		class="com.javazx.batch.quartz.trigger.UserCronTriggerFactoryBean">
+		<constructor-arg index="0" value="userJobDetail" />
+		<constructor-arg index="1" value="0 */1 * * * ?" />
+	</bean>
+
+
+</beans>

@@ -11,5 +11,5 @@ import java.util.List;
  */
 public interface UserFromMapper {
 
-    List<UserFrom> selectAllInfo();
+    List<UserFrom> selectAllInfo(int _skiprows, int _pagesize);
 }

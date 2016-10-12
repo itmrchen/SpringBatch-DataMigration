@@ -6,6 +6,11 @@ import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.configuration.JobLocator;
 import org.springframework.batch.core.launch.JobLauncher;
 
+/**
+ * @author itmrchen
+ * @date 2016/10/12
+ * @time 13:19
+ */
 public class UserBatchJob {
 	private String jobName;
 

@@ -15,6 +15,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.4" />
@@ -29,7 +30,13 @@
           <element id="library" level="project" name="Maven: org.codehaus.jettison:jettison:1.2" />
           <element id="library" level="project" name="Maven: org.springframework.batch:spring-batch-infrastructure:3.0.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.retry:spring-retry:1.1.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.1" />
+          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.6" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.0.3" />
+          <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.7" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.2" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

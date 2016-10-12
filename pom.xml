@@ -21,6 +21,12 @@
         <spring.batch>3.0.3.RELEASE</spring.batch>
         <!-- 阿里巴巴数据源包 -->
         <druid.version>1.0.15</druid.version>
+        <!-- quartz定时服务包 -->
+        <quartz>2.2.1</quartz>
+        <!-- log4j日志文件管理包版本 -->
+        <logback.version>1.1.2</logback.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <servlet_api.version>3.1.0</servlet_api.version>
     </properties>
     <dependencies>
         <!-- spring 核心包 -->
@@ -33,6 +39,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
@@ -76,11 +88,42 @@
             <version>${spring.batch}</version>
         </dependency>
 
+        <!-- Quartz定时服务 -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz}</version>
+        </dependency>
+
         <!-- mysql驱动包 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
+        </dependency>
+
+        <!-- Logback -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet_api.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- junit单元测试包 -->

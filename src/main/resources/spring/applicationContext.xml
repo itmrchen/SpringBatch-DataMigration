@@ -16,5 +16,6 @@
     <import resource="classpath:spring/spring-jdbc.xml" />
     <import resource="classpath:spring/batch-context.xml" />
     <import resource="classpath:spring/user-batch.xml" />
+    <import resource="classpath:spring/quartz-context.xml" />
 
 </beans>

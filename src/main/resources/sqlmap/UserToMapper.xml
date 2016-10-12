@@ -19,7 +19,7 @@
     </sql>
     <!-- spring batch 批量插入 -->
     <insert id="batchInsert" parameterType="List">
-        insert into user_to (id, user_name, sex,
+        insert into user_to (id,user_name, sex,
         age, address,
         create_time, update_time, status, remark)
         values

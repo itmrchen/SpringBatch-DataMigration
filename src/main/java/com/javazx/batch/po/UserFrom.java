@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class UserFrom implements Serializable {
 
-    private static final long serialVersionUID = -6731585846188518734L;
+    private static final long serialVersionUID = -1;
 
     /**
      * 主键
