@@ -14,24 +14,13 @@
         <!-- mybatis/spring包 -->
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
         <!-- mysql驱动包 -->
-        <mysql.version>5.1.36</mysql.version>
+        <mysql.version>5.0.3</mysql.version>
         <!-- spring版本号 -->
         <spring.version>4.1.7.RELEASE</spring.version>
         <!-- springBatch包 -->
         <spring.batch>3.0.3.RELEASE</spring.batch>
-
-        <!-- for maven compiler plugin -->
-        <maven_deploy_skip>false</maven_deploy_skip>
-        <java_source_version>1.7</java_source_version>
-        <java_target_version>1.7</java_target_version>
-        <maven_compiler_plugin_version>3.3</maven_compiler_plugin_version>
-        <maven_jar_plugin_version>2.6</maven_jar_plugin_version>
-        <maven_war_plugin_version>2.1.1</maven_war_plugin_version>
-        <maven_install_plugin_version>2.5.2</maven_install_plugin_version>
-        <maven_deploy_plugin_version>2.7</maven_deploy_plugin_version>
-        <maven_surefire_plugin_version>2.18.1</maven_surefire_plugin_version>
-        <maven_resources_plugin_version>2.7</maven_resources_plugin_version>
-        <maven_source_plugin_version>2.4</maven_source_plugin_version>
+        <!-- 阿里巴巴数据源包 -->
+        <druid.version>1.0.15</druid.version>
     </properties>
     <dependencies>
         <!-- spring 核心包 -->
@@ -47,11 +36,24 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
         <!-- mybatis 核心包 -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>${mybatis.version}</version>
+        </dependency>
+
+        <!-- 阿里巴巴数据源druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
         </dependency>
 
         <!-- mybatis/spring包 -->
@@ -72,6 +74,13 @@
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-infrastructure</artifactId>
             <version>${spring.batch}</version>
+        </dependency>
+
+        <!-- mysql驱动包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
 
         <!-- junit单元测试包 -->

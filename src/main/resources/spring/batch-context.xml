@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:batch="http://www.springframework.org/schema/batch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/batch	http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName" default-init-method="init">
+
+
+    <bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/>
+
+    <!-- 作业调度器，用来启动job,引用作业仓库 -->
+    <bean id="jobLauncher"
+          class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+        <property name="jobRepository" ref="jobRepository"/>
+    </bean>
+
+    <!-- 任务注册器 -->
+    <!-- 所谓的“任务注册器（JobRegistry）”不是必须的（它的父接口是“任务定位器JobLocator”）， 但如果你想追踪哪些任务在当前的上下文中是有效的，那么它就很有用。同时对于在一个应用上下文中集中的收集在别处创建的任务也很有用（比如在下级上下文中）。
+        自定义实现“任务注册器（JobRegistry）”也可以用来更改任务名称或其他已注册的属性。框架只提供了一种实现，基于简单的映射表（map） -->
+    <bean id="jobRegistry"
+          class="org.springframework.batch.core.configuration.support.MapJobRegistry"/>
+
+    <!-- A BeanPostProcessor that registers Job beans with a JobRegistry. -->
+    <!-- 任务处理器的Bean发送处理器（JobRegistryBeanPostProcessor） -->
+    <bean
+            class="org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor">
+        <property name="jobRegistry" ref="jobRegistry"/>
+    </bean>
+
+
+</beans>			
