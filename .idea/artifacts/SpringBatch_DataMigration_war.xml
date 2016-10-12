@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringBatch-DataMigration:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SpringBatch-DataMigration.war">
+      <element id="artifact" artifact-name="SpringBatch-DataMigration:war exploded" />
+    </root>
+  </artifact>
+</component>
