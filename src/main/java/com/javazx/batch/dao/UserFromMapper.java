@@ -1,7 +1,6 @@
 package com.javazx.batch.dao;
 
 import com.javazx.batch.po.UserFrom;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
