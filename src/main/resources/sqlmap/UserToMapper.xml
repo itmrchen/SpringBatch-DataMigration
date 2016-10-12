@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javazx.batch.dao.UserToMapper">
+    <resultMap id="BaseResultMap" type="com.javazx.batch.po.UserTo">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="sex" property="sex" jdbcType="INTEGER"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="DATE"/>
+        <result column="update_time" property="updateTime" jdbcType="DATE"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, user_name, sex,
+        age, address,
+        create_time, update_time, status, remark
+    </sql>
+    <!-- spring batch 批量插入 -->
+    <insert id="batchInsert" parameterType="List">
+        insert into user_to (id, user_name, sex,
+        age, address,
+        create_time, update_time, status, remark)
+        values
+        <foreach collection="list" item="user" index="index"
+                 separator=",">
+            (#{user.id,jdbcType=BIGINT},
+            #{user.userName,jdbcType=VARCHAR},
+            #{user.sex,jdbcType=INTEGER},
+            #{user.age,jdbcType=INTEGER},
+            #{user.address,jdbcType=VARCHAR},
+            #{user.createTime,jdbcType=DATE},
+            #{user.updateTime,jdbcType=DATE},
+            #{user.status,jdbcType=INTEGER},
+            #{user.remark,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+</mapper>
