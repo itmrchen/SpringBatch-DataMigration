@@ -48,6 +48,7 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <!-- spring-jdbc -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -119,6 +120,7 @@
             <version>${logback.version}</version>
         </dependency>
 
+        <!-- servlet api -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
