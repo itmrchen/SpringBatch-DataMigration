@@ -38,17 +38,9 @@ public class JobLauncherController {
         JobParameters jobParameters = bulidParameters(request);
         JobExecution result = jobLauncher.run(jobRegistry.getJob(jobName),
                 jobParameters);
-        ExitStatus es = result.getExitStatus();
-        if (es.getExitCode().equals(ExitStatus.COMPLETED.getExitCode())) {
-            return "ok";
-        } else if (es.getExitCode().equals(ExitStatus.EXECUTING.getExitCode())) {
-            return "process";
-        } else if (es.getExitCode().equals(ExitStatus.UNKNOWN.getExitCode())) {
-            return "process";
-        } else {
-            System.out.println("任务失败，exitCode=" + es.getExitCode());
-            return "err";
-        }
+        //ExitStatus es = result.getExitStatus();
+        return "ok";
+
 
     }
 
