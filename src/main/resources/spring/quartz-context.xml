@@ -11,13 +11,13 @@
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="jobDetails">
 			<list>
-				 <ref bean="userJobDetail" />
+				 <!--<ref bean="userJobDetail" />-->
 			</list>
 		</property>
 
 		<property name="triggers">
 			<list>
-				 <ref bean="userCronTrigger" />
+				 <!--<ref bean="userCronTrigger" />-->
 			</list>
 		</property>
 
