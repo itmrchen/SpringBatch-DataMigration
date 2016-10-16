@@ -3,6 +3,7 @@ package com.javazx.batch.logback;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.SystemPropertyUtils;
@@ -10,25 +11,31 @@ import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
 
-
+/**
+ * @author itmrchen
+ * @date 2016/10/12
+ * @time 13:19
+ */
 public abstract class LogbackConfigurer {
 
-    /** Pseudo URL prefix for loading from the class path: "classpath:" */
-    public static final String       CLASSPATH_URL_PREFIX = "classpath:";
+    /**
+     * Pseudo URL prefix for loading from the class path: "classpath:"
+     */
+    public static final String CLASSPATH_URL_PREFIX = "classpath:";
 
-    /** Extension that indicates a logback XML config file: ".xml" */
-    public static final String       XML_FILE_EXTENSION   = ".xml";
+    /**
+     * Extension that indicates a logback XML config file: ".xml"
+     */
+    public static final String XML_FILE_EXTENSION = ".xml";
 
-    private static LoggerContext     lc                   = (LoggerContext) LoggerFactory.getILoggerFactory();
-    private static JoranConfigurator configurator         = new JoranConfigurator();
+    private static LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    private static JoranConfigurator configurator = new JoranConfigurator();
 
     /**
      * Initialize logback from the given file location, with no config file refreshing. Assumes an XML file in case of a ".xml" file extension, and a properties file otherwise.
      *
-     * @param location
-     *            the location of the config file: either a "classpath:" location (e.g. "classpath:mylogback.properties"), an absolute file URL (e.g. "file:C:/logback.properties), or a plain absolute path in the file system (e.g. "C:/logback.properties")
-     * @throws FileNotFoundException
-     *             if the location specifies an invalid file path
+     * @param location the location of the config file: either a "classpath:" location (e.g. "classpath:mylogback.properties"), an absolute file URL (e.g. "file:C:/logback.properties), or a plain absolute path in the file system (e.g. "C:/logback.properties")
+     * @throws FileNotFoundException if the location specifies an invalid file path
      */
     public static void initLogging(String location) throws FileNotFoundException {
         String resolvedLocation = SystemPropertyUtils.resolvePlaceholders(location);
@@ -63,8 +70,7 @@ public abstract class LogbackConfigurer {
      * <p>
      * This can be used e.g. for test environments, for applications that leverage logbackWebConfigurer's "webAppRootKey" support in a web environment.
      *
-     * @param key
-     *            system property key to use, as expected in logback configuration (for example: "demo.root", used as "${demo.root}/WEB-INF/demo.log")
+     * @param key system property key to use, as expected in logback configuration (for example: "demo.root", used as "${demo.root}/WEB-INF/demo.log")
      * @see
      */
     public static void setWorkingDirSystemProperty(String key) {

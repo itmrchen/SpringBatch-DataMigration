@@ -2,26 +2,37 @@ package com.javazx.batch.logback;
 
 import java.io.FileNotFoundException;
 import javax.servlet.ServletContext;
+
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.SystemPropertyUtils;
 import org.springframework.web.util.WebUtils;
 
+/**
+ * @author itmrchen
+ * @date 2016/10/12
+ * @time 13:19
+ */
 public abstract class LogbackWebConfigurer {
 
-    /** Parameter specifying the location of the logback config file */
-    public static final String CONFIG_LOCATION_PARAM     = "logbackConfigLocation";
+    /**
+     * Parameter specifying the location of the logback config file
+     */
+    public static final String CONFIG_LOCATION_PARAM = "logbackConfigLocation";
 
-    /** Parameter specifying the refresh interval for checking the logback config file */
-    public static final String REFRESH_INTERVAL_PARAM    = "logbackRefreshInterval";
+    /**
+     * Parameter specifying the refresh interval for checking the logback config file
+     */
+    public static final String REFRESH_INTERVAL_PARAM = "logbackRefreshInterval";
 
-    /** Parameter specifying whether to expose the web app root system property */
+    /**
+     * Parameter specifying whether to expose the web app root system property
+     */
     public static final String EXPOSE_WEB_APP_ROOT_PARAM = "logbackExposeWebAppRoot";
 
     /**
      * Initialize logback, including setting the web app root system property.
      *
-     * @param servletContext
-     *            the current ServletContext
+     * @param servletContext the current ServletContext
      * @see WebUtils#setWebAppRootSystemProperty
      */
     public static void initLogging(ServletContext servletContext) {
@@ -58,8 +69,7 @@ public abstract class LogbackWebConfigurer {
     /**
      * Shut down logback, properly releasing all file locks and resetting the web app root system property.
      *
-     * @param servletContext
-     *            the current ServletContext
+     * @param servletContext the current ServletContext
      * @see WebUtils#removeWebAppRootSystemProperty
      */
     public static void shutdownLogging(ServletContext servletContext) {
