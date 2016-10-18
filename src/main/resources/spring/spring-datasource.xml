@@ -63,4 +63,31 @@
 			value="${jdbc.mysql.to.connection.maxPoolPreparedStatementPerConnectionSize}" />
 	</bean>
 
+	<!-- data_rep数据源 -->
+	<bean id="dataRepDruidDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		  init-method="init" destroy-method="close">
+		<property name="url" value="${jdbc.mysql.rep.connection.url}" />
+		<property name="username" value="${jdbc.mysql.rep.connection.username}" />
+		<property name="password" value="${jdbc.mysql.rep.connection.password}" />
+		<property name="filters" value="${jdbc.mysql.rep.connection.filters}" />
+		<property name="maxActive" value="${jdbc.mysql.rep.connection.maxActive}" />
+		<property name="initialSize" value="${jdbc.mysql.rep.connection.initialSize}" />
+		<property name="maxWait" value="${jdbc.mysql.rep.connection.maxWait}" />
+		<property name="minIdle" value="${jdbc.mysql.rep.connection.minIdle}" />
+		<property name="timeBetweenEvictionRunsMillis"
+				  value="${jdbc.mysql.rep.connection.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis"
+				  value="${jdbc.mysql.rep.connection.minEvictableIdleTimeMillis}" />
+		<property name="validationQuery"
+				  value="${jdbc.mysql.rep.connection.validationQuery}" />
+		<property name="testWhileIdle"
+				  value="${jdbc.mysql.rep.connection.testWhileIdle}" />
+		<property name="testOnBorrow" value="${jdbc.mysql.rep.connection.testOnBorrow}" />
+		<property name="testOnReturn" value="${jdbc.mysql.rep.connection.testOnReturn}" />
+		<property name="poolPreparedStatements"
+				  value="${jdbc.mysql.rep.connection.poolPreparedStatements}" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+				  value="${jdbc.mysql.rep.connection.maxPoolPreparedStatementPerConnectionSize}" />
+	</bean>
+
 </beans>

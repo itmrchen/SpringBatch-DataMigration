@@ -4,8 +4,12 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName" default-init-method="init">
 
-
-    <bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/>
+    <!-- 内存仓库  -->
+    <!--<bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/>-->
+    <!-- 数据库仓库  -->
+    <batch:job-repository id="jobRepository" data-source="dataRepDruidDataSource"
+                          isolation-level-for-create="SERIALIZABLE" transaction-manager="transactionManager"
+                          table-prefix="BATCH_" max-varchar-length="1000" />
 
     <!-- 作业调度器，用来启动job,引用作业仓库 -->
     <bean id="jobLauncher"
