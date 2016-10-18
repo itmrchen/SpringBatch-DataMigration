@@ -26,7 +26,4 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\mrchen\AppData\Roaming\Subversion</configuration>
-  </component>
 </project>
