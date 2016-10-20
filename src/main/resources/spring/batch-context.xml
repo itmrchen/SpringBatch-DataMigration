@@ -6,6 +6,7 @@
 
     <!-- 内存仓库  -->
     <!--<bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/>-->
+
     <!-- 数据库仓库  -->
     <batch:job-repository id="jobRepository" data-source="dataRepDruidDataSource"
                           isolation-level-for-create="SERIALIZABLE" transaction-manager="transactionManager"
