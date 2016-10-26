@@ -9,13 +9,15 @@
 
     <!-- 扫描包 -->
     <context:component-scan base-package="com.javazx.batch"/>
+
     <!-- 加载配置文件 -->
     <context:property-placeholder location="classpath:properties/*.properties"/>
 
-    <import resource="classpath:spring/spring-datasource.xml" />
-    <import resource="classpath:spring/spring-jdbc.xml" />
-    <import resource="classpath:spring/batch-context.xml" />
-    <import resource="classpath:spring/user-batch.xml" />
-    <import resource="classpath:spring/quartz-context.xml" />
+    <!-- 导入配置文件 -->
+    <import resource="classpath:spring/spring-datasource.xml"/>
+    <import resource="classpath:spring/spring-jdbc.xml"/>
+    <import resource="classpath:spring/batch-context.xml"/>
+    <import resource="classpath:spring/user-batch.xml"/>
+    <import resource="classpath:spring/quartz-context.xml"/>
 
 </beans>
